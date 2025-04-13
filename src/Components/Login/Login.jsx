@@ -20,7 +20,7 @@ const Login = () => {
 
   const handlelogin = async () => {
     try {
-      const response = await axios.post("https://netflix-clone-backend-vas2.onrender.com/login", {
+      const response = await axios.post("https://netflix-clone-backend-vas2.onrender.com/api/auth/login", {
         email,
         password,
       });
@@ -32,6 +32,7 @@ const Login = () => {
       }
     } catch (error) {
       setError("Error logging in");
+      console.log(error);
     }
   };
 
