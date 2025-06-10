@@ -31,7 +31,7 @@ const Blockbuster = () => {
           return (
            
               <div key={index} className="rounded-xl bg-white h-[50vh]">
-                <img src={card.image} alt="" className="w-full h-[40vh] object-cover rounded-t-xl" />
+                <img src={card.image} alt="" className="w-full h-[40vh] rounded-t-xl object-cover" />
                 <div className="p-3 flex justify-between items-center">
                   <h1 className="font-stylish font-medium">{card.name}</h1>
                   <button className="px-3 py-2 bg-blue rounded-md text-white">See more</button>
