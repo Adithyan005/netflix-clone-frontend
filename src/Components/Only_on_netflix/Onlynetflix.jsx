@@ -4,32 +4,41 @@ import { useState } from "react";
 import axios from "axios";
 
 const Onlynetflix = () => {
-  const [movie, setMovie] = useState([]);
+  const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    async function fetchmovie(req, res) {
+    async function fetchdata(req, res) {
       try {
         const result = await axios.get(
           "https://netflix-clone-backend-vas2.onrender.com/api/flix/onlyonnetflix"
         );
-        console.log(result);
-        setMovie(result);
+        console.log(result.data.onlyonflix);
+        setMovies(result.data.onlyonflix);
       } catch (error) {
         console.log(error);
       }
     }
-    fetchmovie();
+    fetchdata();
   }, []);
 
   return (
-    <div>
-      <h1>hello</h1>
-      <div>
-        {movie.map((card, index) => {
+   <div className="">
+      <div className="flex items-center justify-center p-5">
+        <h1 className="font-stylish text-xl font-medium text-white">
+          Only on Netflix Movies
+        </h1>
+      </div>
+      <div className="grid grid-cols-3 gap-8 p-7">
+        {movies.map((card, index) => {
           return (
-            <div key={index}>
-              <h1>{card.name}</h1>
-            </div>
+           
+              <div key={index} className="rounded-xl bg-white h-[50vh]">
+                <img src={card.image} alt="" className="w-full h-[40vh] rounded-t-xl object-cover" />
+                <div className="p-3 flex justify-between items-center">
+                  <h1 className="font-stylish font-medium">{card.name}</h1>
+                  <button className="px-3 py-2 bg-blue rounded-md text-white">See more</button>
+                </div>
+              </div>
           );
         })}
       </div>
