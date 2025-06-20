@@ -26,7 +26,7 @@ const Onlynetflix = () => {
   const handleclick = async (movie_id) => {
     try {
       const response = await axios.get(
-        `http://localhost:4000/api/flix/onlyonnetflix/${movie_id}`
+        `https://netflix-clone-backend-vas2.onrender.com/api/flix/onlyonnetflix/${movie_id}`
       );
       console.log(response.data)
       if(response.status === 200)
