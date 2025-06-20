@@ -74,7 +74,7 @@ const Movie_Page = () => {
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-              className="md:w-[770px] md:h-[380px]"
+              className="md:w-[720px] md:h-[380px]"
             ></iframe>
           ) : (
             <p className="text-red-500">Trailer not available</p>

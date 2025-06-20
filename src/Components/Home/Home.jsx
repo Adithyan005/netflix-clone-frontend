@@ -24,7 +24,7 @@ const Home = () => {
   const handleclick = async (movieid) => {
     try {
       const response = await axios.get(
-        `https://netflix-clone-backend-vas2.onrender.com/api/home/movies/${movieid}`
+        `http://localhost:4000/api/popular/movies/${movieid}`
       );
 
       if (response.status == 200) {
@@ -46,6 +46,7 @@ const Home = () => {
               backgroundPosition: "center",
               backgroundSize: "cover",
               height: "100vh",
+              width:"100vw",
               color: "black",
             }}
           >
