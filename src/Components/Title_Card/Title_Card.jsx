@@ -14,7 +14,7 @@ const Title_Card = (props) => {
       }
     }
     fetchdata();
-  });
+  },[]);
   const navigate = useNavigate();
   const handleclick = async (movieid) => {
     try {
