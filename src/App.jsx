@@ -7,6 +7,7 @@ import Signup from "./Components/Signup/Signup";
 import Blockbuster from "./Components/blockbuster/Blockbuster"
 import Onlynetflix from "./Components/Only_on_netflix/Onlynetflix";
 import Bbpage from "./Components/blockbuster/Bbpage";
+import Onlyflixpage from "./Components/Only_on_netflix/Onlyflixpage";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
       <Route path="/bk" element={<Blockbuster/>}/>
       <Route path="/onlyflix" element={<Onlynetflix/>}/>
       <Route path="/bbpage" element={<Bbpage/>}/>
+      <Route path="/onlyflixpage" element={<Onlyflixpage/>}/>
      </Routes>
      </BrowserRouter>
     </div>
