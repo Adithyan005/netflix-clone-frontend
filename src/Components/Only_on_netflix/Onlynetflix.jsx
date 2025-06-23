@@ -42,11 +42,11 @@ const Onlynetflix = () => {
   return (
     <div className="">
       <div className="flex items-center justify-center p-5">
-        <h1 className="font-stylish text-xl font-medium text-white">
+        <h1 className="font-stylish text-2xl font-medium text-white md:text-xl">
           Only on Netflix Movies
         </h1>
       </div>
-      <div className="grid grid-cols-3 gap-8 p-7">
+      <div className="grid grid-cols-1 gap-8 p-7 md:grid md:grid-cols-3 md:gap-8 md:p-7 ">
         {movies.map((card, index) => {
           return (
             <div key={index} className="rounded-xl bg-white h-[50vh]">

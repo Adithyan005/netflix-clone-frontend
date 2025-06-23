@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../assets/logo.png";
+import name from "../../assets/name.png";
 import background from "../../assets/bg.jpeg";
 import axios from "axios";
 import { useState } from "react";
@@ -10,7 +10,7 @@ const Login = () => {
     backgroundImage: `url(${background})`,
     backgroundPosition: "center",
     backgroundSize: "cover",
-    height: "100vh",
+    height: "105vh",
   };
 
   const [email, setEmail] = useState("");
@@ -36,12 +36,12 @@ const Login = () => {
     }
   };
 
-  // isAuthenticated ? navigate("/moviepage") : navigate("/login");
+  
   return (
     <div className="text-white font-stylish">
-      <div className="p-6 md:p-6" style={bgstyle}>
-        <img src={logo} alt="" className="w-[27vw] md:w-[10vw]" />
-        <div className="bg-black bg-opacity-70 max-w-[80vw] mx-auto max-h-[80vh] px-3 mt-1 pb-4 md:bg-black md:bg-opacity-70 md:max-w-[27vw] md:mx-auto md:max-h-[120vh] md:px-5 md:mt-5 md:pb-4">
+      <div className="px-3 md:-mt-7" style={bgstyle}>
+        <img src={name} alt="" className="w-[27vw] md:w-[10vw]" />
+        <div className="bg-black bg-opacity-70 max-w-[80vw] mx-auto max-h-[80vh] px-3 mt-0 pb-4 md:bg-black md:bg-opacity-70 md:max-w-[27vw] md:mx-auto md:max-h-[100vh] md:px-5 md:-mt-6 md:pb-4">
           <div className="pt-10 ms-6 md:pt-14 md:ms-6">
             <h1 className="text-2xl font-semibold md:text-3xl md:font-semibold">Sign In</h1>
           </div>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../../assets/logo.png";
+import name from "../../assets/name.png";
 import background from "../../assets/bg.jpeg";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
@@ -11,7 +11,7 @@ const Signup = () => {
       backgroundImage: `url(${background})`,
       backgroundPosition: "center",
       backgroundSize: "cover",
-      height: "100vh",
+      height: "105vh",
     };
 
     const [email,setEmail] = useState("")
@@ -40,8 +40,8 @@ const Signup = () => {
 
   return (
       <div className="text-white font-stylish">
-        <div className="p-6 md:p-6" style={bgstyle}>
-          <img src={logo} alt="" className="w-[27vw] md:w-[10vw]" />
+        <div className="p-3 md:px-3 md:-mt-10" style={bgstyle}>
+          <img src={name} alt="" className="w-[27vw] md:w-[10vw]" />
           <div className="bg-black bg-opacity-70 max-w-[80vw] mx-auto max-h-[80vh] px-3 mt-20 pb-4 md:bg-black md:bg-opacity-70 md:max-w-[27vw] md:mx-auto md:max-h-[120vh] md:px-5 md:mt-5 md:pb-4">
             <form onSubmit={handlesubmit}>
             <div className="pt-10 ms-6 md:pt-14 md:ms-6 ">

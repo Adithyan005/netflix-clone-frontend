@@ -41,12 +41,12 @@ const Blockbuster = () => {
 
   return (
     <div className="">
-      <div className="flex items-center justify-center p-5">
-        <h1 className="font-stylish text-xl font-medium text-white">
+      <div className="flex items-center justify-center p-5 md:flex md:items-center md:justify-center md:p-5 ">
+        <h1 className="font-stylish text-2xl font-medium text-white md:font-stylish md:text-xl md:font-medium md:text-white">
           Blockbuster Movies
         </h1>
       </div>
-      <div className="grid grid-cols-3 gap-8 p-7">
+      <div className="grid grid-cols-1 gap-8 p-7 md:grid md:grid-cols-3 md:gap-8 md:p-7">
         {list.map((card,index) => {
           return (
             <div key={index} className="rounded-xl bg-white h-[50vh]">

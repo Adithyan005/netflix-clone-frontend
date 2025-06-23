@@ -24,7 +24,7 @@ const Home = () => {
   const handleclick = async (movieid) => {
     try {
       const response = await axios.get(
-        `http://localhost:4000/api/popular/movies/${movieid}`
+        `https://netflix-clone-backend-vas2.onrender.com/api/popular/movies/${movieid}`
       );
 
       if (response.status == 200) {
@@ -52,8 +52,8 @@ const Home = () => {
           >
             <Navbar />
 
-            <div className="md:pt-16 pt-40">
-              <img src={card.titleimage} alt="" className="md:w-[35vw] w-[80vw]" />
+            <div className="md:pt-16 pt-28">
+              <img src={card.titleimage} alt="" className="md:w-[35vw] w-[70vw]" />
               <div className="md:w-[45vw] md:ms-4 md:px-6 w-[80vw] ms-3 px-6">
                 <p className="md:text-white md:font-stylish md:text-justify text-white font-stylish text-justify">
                   {card.description}
@@ -78,7 +78,7 @@ const Home = () => {
         );
       })}
 
-      <div className="md:absolute md:left-8  md:top-[62vh] absolute left-4 top-[73vh] ">
+      <div className="md:absolute md:left-8  md:top-[62vh] absolute left-4 top-[70vh] ">
         <div className="md:mt-[5rem] md:ms-2 md:mb-[1rem] mt-[3rem] ms-2 mb-[2rem]">
           <Title_Card title={"Popular on Netflix"} />
           
