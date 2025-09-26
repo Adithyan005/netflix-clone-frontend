@@ -20,30 +20,34 @@ const Login = () => {
 
   const handlelogin = async () => {
     try {
-      const response = await axios.post("https://netflix-clone-backend-vas2.onrender.com/api/auth/login", {
-        email,
-        password,
-      });
-      if (response.data.success) {
-        localStorage.setItem("isLoggedIn","true")
+      const response = await axios.post(
+        "https://netflix-clone-backend-vas2.onrender.com/api/auth/login",
+        {
+          email,
+          password,
+        }
+      );
+      if (response.data.success && response.data.token) {
+        localStorage.setItem("token", response.data.token);
         navigate("/home");
       } else {
         setError("Invalid email or password");
       }
     } catch (error) {
       setError("Error logging in");
-      console.log("Logging error: ",error);
+      console.log("Logging error: ", error);
     }
   };
 
-  
   return (
     <div className="text-white font-stylish">
       <div className="px-3 md:-mt-7" style={bgstyle}>
         <img src={name} alt="" className="w-[27vw] md:w-[10vw]" />
         <div className="bg-black bg-opacity-70 max-w-[80vw] mx-auto max-h-[80vh] px-3 mt-0 pb-4 md:bg-black md:bg-opacity-70 md:max-w-[27vw] md:mx-auto md:max-h-[100vh] md:px-5 md:-mt-6 md:pb-4">
           <div className="pt-10 ms-6 md:pt-14 md:ms-6">
-            <h1 className="text-2xl font-semibold md:text-3xl md:font-semibold">Sign In</h1>
+            <h1 className="text-2xl font-semibold md:text-3xl md:font-semibold">
+              Sign In
+            </h1>
           </div>
           <div className="flex flex-col justify-center items-center md:flex md:flex-col md:justify-center md:items-center">
             <div className="pt-5 md:pt-5">
@@ -66,7 +70,11 @@ const Login = () => {
                 className="bg-gray-600 w-[60vw] h-10 p-5 md:bg-gray-600 md:w-[20vw] md:h-10 md:p-5"
               />
             </div>
-            {error && <p className="pt-2 text-red-500 md:pt-2 md:text-red-500">{error}</p>}
+            {error && (
+              <p className="pt-2 text-red-500 md:pt-2 md:text-red-500">
+                {error}
+              </p>
+            )}
             <div className="pt-8 md:pt-7">
               <button
                 className="bg-red-700 w-[60vw] h-10 md:bg-red-700 md:w-[20vw] md:h-10"
