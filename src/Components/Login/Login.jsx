@@ -22,20 +22,26 @@ const Login = () => {
     try {
       const response = await axios.post(
         "https://netflix-clone-backend-vas2.onrender.com/api/auth/login",
-        {
-          email,
-          password,
-        }
+        { email, password }
       );
+
       if (response.data.success && response.data.token) {
         localStorage.setItem("token", response.data.token);
         navigate("/home");
       } else {
-        setError("Invalid email or password");
+        setError(response.data.message || "Invalid email or password");
       }
     } catch (error) {
-      setError("Error logging in");
       console.log("Logging error: ", error);
+      if (
+        error.response &&
+        error.response.data &&
+        error.response.data.message
+      ) {
+        setError(error.response.data.message);
+      } else {
+        setError("Error logging in");
+      }
     }
   };
 
